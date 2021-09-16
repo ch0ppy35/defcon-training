@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://127.0.0.1/challenge', { useNewUrlParser: true } );
+mongoose.connect('mongodb://mongo:27017/challenge', { useNewUrlParser: true } );
 
 const Schema = mongoose.Schema;
 
