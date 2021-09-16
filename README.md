@@ -7,6 +7,14 @@ Customers expect web applications to provide significant functionality and data 
 
 In this workshop we will teach you how to find vulnerabilities in web security according to the latest methods and techniques. We will demonstrate every vulnerability by giving an example from vulnerability we have found in major tech companies like: Facebook, WhatsApp, Amazon, AliExpress, Snapchat, DJI, LG and more!
 
+# Run with Docker (@ch0ppy35)
+
+Either build the image yourself, or use the one hosted in Dockerhub
+
+`docker run -it --rm -p 3000:3000 ch0ppy35/zero-to-hero:latest`
+
+Access via `http://127.0.0.1:3000`
+
 # Prerequisites
 - node
 - mongo db

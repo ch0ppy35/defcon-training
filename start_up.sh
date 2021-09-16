@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Turn mongo on
 mongod --fork --syslog
-#DEBUG=express:* 
+
+# Start express
+#DEBUG=express:* node bin/www
 node bin/www
