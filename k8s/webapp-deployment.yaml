@@ -1,0 +1,44 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: webapp
+  labels:
+    name: webapp
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8080
+      targetPort: 3000
+      protocol: TCP
+  selector:
+    app: webapp
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webapp
+  template:
+    metadata:
+      labels:
+        app: webapp
+    spec:
+      containers:
+        - name: webapp
+          image: ch0ppy35/zero-to-hero:k8s
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 3000
+              name: http-server
+          imagePullPolicy: Always
